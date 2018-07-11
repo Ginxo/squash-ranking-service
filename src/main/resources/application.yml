@@ -1,0 +1,12 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: example
+  datasource:
+    password: a
+    username: a
+    url: "jdbc:h2:~/squash-test.db"
+  jpa:
+    hibernate:
+      ddl-auto: update
