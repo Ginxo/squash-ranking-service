@@ -2,6 +2,7 @@ package com.cano.mingorance.enrique.squashrankingservice.rest.controller;
 
 import com.cano.mingorance.enrique.squashrankingservice.core.MatchManager;
 import com.cano.mingorance.enrique.squashrankingservice.persistence.entity.Match;
+import com.cano.mingorance.enrique.squashrankingservice.rest.controller.validator.MatchControllerHelper;
 import com.cano.mingorance.enrique.squashrankingservice.rest.dto.MatchDTO;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class MatchController {
 
     @Autowired
     private DozerBeanMapper mapper;
+
+    @Autowired
+    private MatchControllerHelper helper;
 
     /**
      * Find all list.
@@ -51,6 +55,9 @@ public class MatchController {
      */
     @PostMapping("/")
     public MatchDTO save(@RequestBody MatchDTO dto) {
+        if (!this.helper.isValid(dto)) {
+            throw new IllegalArgumentException("The dto is not valid");
+        }
         return mapper.map(manager.save(mapper.map(dto, Match.class)), MatchDTO.class);
     }
 }
