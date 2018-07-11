@@ -14,7 +14,7 @@ import java.util.List;
  * The type Player controller.
  */
 @RestController
-@RequestMapping("/player")
+@RequestMapping("/matches")
 public class MatchController {
 
     @Autowired

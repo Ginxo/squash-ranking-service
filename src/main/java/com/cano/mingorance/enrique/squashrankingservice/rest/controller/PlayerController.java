@@ -1,5 +1,6 @@
 package com.cano.mingorance.enrique.squashrankingservice.rest.controller;
 
+import com.cano.mingorance.enrique.squashrankingservice.core.PlayerManager;
 import com.cano.mingorance.enrique.squashrankingservice.persistence.entity.Player;
 import com.cano.mingorance.enrique.squashrankingservice.rest.dto.PlayerDTO;
 import org.dozer.DozerBeanMapper;
@@ -12,7 +13,7 @@ import java.util.List;
  * The type Player controller.
  */
 @RestController
-@RequestMapping("/player")
+@RequestMapping("/players")
 public class PlayerController {
 
     @Autowired
@@ -50,6 +51,6 @@ public class PlayerController {
      */
     @PostMapping("/")
     public PlayerDTO save(@RequestBody PlayerDTO playerDTO) {
-        return manager.save(mapper.map(playerDTO, Player.class));
+        return mapper.map(manager.save(mapper.map(playerDTO, Player.class)), PlayerDTO.class);
     }
 }
