@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <Player id="1" name="player1" surname="player_surname1" nationality="player_nat1" ranking="1" is_deleted="false"/>
+    <Player id="2" name="player2" surname="player_surname2" nationality="player_nat2" ranking="2" is_deleted="true"/>
+
+    <Match id="1" player1="1" player2="2" winner="1" loser="2" court="pista1" match_date="2016-03-23" />
+    <Match id="2" player1="1" player2="2" winner="1" loser="2" court="pista1" match_date="2017-03-23" />
+    <Match id="3" player1="1" player2="2" winner="1" loser="2" court="pista1" match_date="2018-03-23" />
+
+    <Match_Set id="1" player1Points="11" player2Points="2" match="1"/>
+    <Match_Set id="2" player1Points="11" player2Points="2" match="1"/>
+    <Match_Set id="3" player1Points="11" player2Points="2" match="1"/>
+
+    <Match_Set id="4" player1Points="11" player2Points="2" match="2"/>
+    <Match_Set id="5" player1Points="11" player2Points="2" match="2"/>
+
+    <Match_Set id="6" player1Points="11" player2Points="2" match="3"/>
+</dataset>
