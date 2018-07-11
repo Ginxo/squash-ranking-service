@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * The type Player.
+ */
 @Entity
 @Getter
 @Setter
