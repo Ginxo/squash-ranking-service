@@ -17,8 +17,6 @@ public class MatchDTO {
 
     private PlayerDTO player1;
     private PlayerDTO player2;
-    private PlayerDTO winner;
-    private PlayerDTO loser;
     private String court;
     private List<MatchSetDTO> matchSets;
     private Date matchDate;
