@@ -10,3 +10,18 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+---
+spring:
+  profiles: container
+  datasource:
+    url: ${DB_URL}
+    driver-class-name: ${DB_DRIVER}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    initialization-mode: never
+  jpa:
+    hibernate:
+      ddl-auto: ${DB_DDL_AUTO}
+server:
+  port: ${SERVER_PORT}
